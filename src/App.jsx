@@ -7,7 +7,6 @@ function App() {
   
   useEffect(() => {
       getAllSongs()
-      console.log("Hello World")
     }, [])
     // optionall array in useEffect defines how often it runs
     
@@ -22,7 +21,7 @@ function App() {
 
   return(
     <div>
-        <button onClick={() => getAllSongs}>Get all Songs</button>
+        <button onClick={() => getAllSongs()}>Get all Songs</button>
     </div>
   );
 }
