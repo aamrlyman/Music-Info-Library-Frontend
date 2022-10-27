@@ -1,5 +1,10 @@
+
+
 const DisplayMusic = (props) => {
-  return (
+
+    
+
+    return (
     <table>
       <thead>
         <tr>
@@ -13,15 +18,15 @@ const DisplayMusic = (props) => {
       <tbody>
         {props.songs.map((song, index) => {
           return (
-            <tr key={song.index}>
-              <td><button>Likes</button></td>
+            <tr key={song.id}>
+              <td><button onClick={() => props.likeSong(song.id)}>Likes {song.likes}</button></td>
               <td><button>Edit</button></td>
               <td>{song.title}</td>
               <td>{song.artist}</td>
               <td>{song.album}</td>
               <td>{song.release_date}</td>
               <td>{song.genre}</td>
-              <td><button>Delete</button></td>
+              <td><button onClick={() => props.deleteSong(song.id)}>Delete</button></td>
             </tr>
           );
         })}

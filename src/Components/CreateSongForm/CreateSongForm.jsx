@@ -23,11 +23,11 @@ const CreateSongForm = (props) => {
         }
        console.log(newSong);
         props.addNewSong(newSong);
-        // setTitle('')
-        // setArtist('')
-        // setAlbum('')
-        // setReleaseDate('')
-        // setGenre('')
+        setTitle('')
+        setArtist('')
+        setAlbum('')
+        setReleaseDate('')
+        setGenre('')
     }
     
     return (

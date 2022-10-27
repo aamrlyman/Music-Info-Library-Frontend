@@ -3,6 +3,7 @@ import axios from 'axios';
 import DisplayMusic from './Components/DisplayMusic/DisplayMusic';
 import NavBar from './Components/NavBar/NavBar';
 import CreateSongForm from './Components/CreateSongForm/CreateSongForm';
+import SearchBar from './Components/SearchBar/SearchBar';
 
 function App() {
   
@@ -26,8 +27,21 @@ function App() {
       // ... is like object.assign. Take all the current values of entries and add whatever entry has in it
       //the only way to update a state variable in React is to use the setEntries function. Use a temporariy array and the ... to assign more values to the array
       console.log(response)
-      let tempSongs = [...songs, song]
-      setSongs(tempSongs);
+      // let tempSongs = [song,...songs]
+      // setSongs(tempSongs);
+      getAllSongs();
+    }
+
+    async function deleteSong(songId){
+      const response = await axios.delete(`http://127.0.0.1:8000/music/${songId}/`);
+      getAllSongs();
+      console.log(response);
+  }
+
+    async function likeSong(songId){
+      const response = await axios.put(`http://127.0.0.1:8000/music/${songId}/like/`);
+      console.log(response);
+      getAllSongs();
     }
 
 
@@ -36,7 +50,7 @@ function App() {
         {/* <button onClick={() => getAllSongs()}>Get all Songs</button> */}
         <NavBar/>
         <CreateSongForm addNewSong = {addNewSong}/>
-        <DisplayMusic songs={songs}/>
+        <SearchBar songs={songs} likeSong={likeSong} deleteSong={deleteSong}/>
     </div>
   );
 }
