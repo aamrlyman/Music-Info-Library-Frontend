@@ -13,7 +13,8 @@ const SearchBar = (props) => {
           sortBySongCriteria();
         }
         else{filterSongs()}
-        // setFilteredSongs(filteredSongs)
+        setDropDownFilter('')
+        setSearchInput('')
       }
 
       function filterSongs(){
