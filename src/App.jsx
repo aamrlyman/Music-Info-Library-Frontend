@@ -49,7 +49,7 @@ function App() {
         {/* <button onClick={() => getAllSongs()}>Get all Songs</button> */}
         <NavBar/>
         <CreateSongForm addNewSong = {addNewSong}/>
-        <SearchBar songs={songs} setSongs={setSongs} likeSong={likeSong} deleteSong={deleteSong}/>
+        <SearchBar songs={songs} getAllSongs={getAllSongs} setSongs={setSongs} likeSong={likeSong} deleteSong={deleteSong}/>
     </div>
   );
 }

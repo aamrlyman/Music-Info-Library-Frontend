@@ -8,6 +8,8 @@ const DisplayMusic = (props) => {
     <table>
       <thead>
         <tr>
+          <th>Likes</th>
+          <th>Edit</th>
           <th>Title</th>
           <th>Artist</th>
           <th>Album</th>
