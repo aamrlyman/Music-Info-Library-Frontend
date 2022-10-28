@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import DisplayMusic from './Components/DisplayMusic/DisplayMusic';
 import NavBar from './Components/NavBar/NavBar';
 import CreateSongForm from './Components/CreateSongForm/CreateSongForm';
 import SearchBar from './Components/SearchBar/SearchBar';
@@ -50,7 +49,7 @@ function App() {
         {/* <button onClick={() => getAllSongs()}>Get all Songs</button> */}
         <NavBar/>
         <CreateSongForm addNewSong = {addNewSong}/>
-        <SearchBar songs={songs} likeSong={likeSong} deleteSong={deleteSong}/>
+        <SearchBar songs={songs} setSongs={setSongs} likeSong={likeSong} deleteSong={deleteSong}/>
     </div>
   );
 }
