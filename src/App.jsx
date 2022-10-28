@@ -40,8 +40,14 @@ function App() {
     async function likeSong(songId){
       const response = await axios.put(`http://127.0.0.1:8000/music/${songId}/like/`);
       console.log(response);
-      getAllSongs();
+      getAllSongs()
     }
+
+    // async function getSongById(songId){
+    //   const response = await axios.get(`http://127.0.0.1:8000/music/${songId}/`);
+    //   console.log(response);
+    //   setSongs(response.data)
+    // }
 
 
   return(

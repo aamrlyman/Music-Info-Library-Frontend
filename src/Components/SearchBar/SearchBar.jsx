@@ -9,12 +9,20 @@ const SearchBar = (props) => {
 
     function handleSumbit(event){
         event.preventDefault();
-        if(searchInput === ""){
+        if(searchInput === "" && dropDownFilter === ""){
+          alert("Use the dropdown or input box to create some search peramaters.")
+        }
+
+        else if(searchInput === "" && dropDownFilter !== "chooseCriteria"){
           sortBySongCriteria();
         }
-        else{filterSongs()}
+        else if(searchInput !== '' && dropDownFilter !== "chooseCriteria")
+        {filterSongs()}
+        else{}
+        
         setDropDownFilter('')
         setSearchInput('')
+
       }
 
       function filterSongs(){
