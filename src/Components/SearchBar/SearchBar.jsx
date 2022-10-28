@@ -9,7 +9,7 @@ const SearchBar = (props) => {
 
     function handleSumbit(event){
         event.preventDefault();
-        if(searchInput === "" && dropDownFilter === ""){
+        if(searchInput === "" && dropDownFilter === "" || dropDownFilter === "chooseCriteria" ){
           alert("Use the dropdown or input box to create some search peramaters.")
         }
 
