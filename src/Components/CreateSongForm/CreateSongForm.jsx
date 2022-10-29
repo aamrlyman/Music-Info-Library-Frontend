@@ -47,7 +47,9 @@ const CreateSongForm = (props) => {
         </div>
         <div className='form-group'>
             <label>Release Date</label>
-            <input type = "date" className="form-control" value={releaseDate}  onChange= {(event) => setReleaseDate(event.target.value)}></input>
+            <input type = "date" className="form-control" value={releaseDate}  onChange= {(event) => setReleaseDate(event.target.value)}>
+
+        </input>
         </div>
         <div className='form-group'>
             <label>Genre</label>

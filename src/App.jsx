@@ -3,6 +3,7 @@ import axios from 'axios';
 import NavBar from './Components/NavBar/NavBar';
 import CreateSongForm from './Components/CreateSongForm/CreateSongForm';
 import SearchBar from './Components/SearchBar/SearchBar';
+import EditModal from './Components/EditModal/EditModal';
 
 function App() {
   

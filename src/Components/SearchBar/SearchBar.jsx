@@ -31,19 +31,16 @@ const SearchBar = (props) => {
       }
 
       function filterSongs(){
-        let filteredSongs = props.songs.filter((song) => song[dropDownFilter].toLocaleLowerCase() === searchInput.trim().toLocaleLowerCase())
+        let filteredSongs = props.songs.filter((song) => song[dropDownFilter].toLocaleLowerCase().includes(searchInput.trim().toLocaleLowerCase()))
         return props.setSongs(filteredSongs)
       }
 
       function filterByIncludes(){
         let filteredByIncludes = props.songs.filter((song) =>{
-            let valuesArray = Object.values(song)
-            let lowerCaseArray = [];
-            for (const el of valuesArray){
-              lowerCaseArray.push(el.toString().toLowerCase())
-            }
-            return lowerCaseArray.includes(searchInput.toString().toLocaleLowerCase().trim())})
-
+          let valuesArray = Object.values(song)
+          let noNumsArr = valuesArray.filter((el) => typeof el === "string");
+            return noNumsArr.some((value) => value.toString().toLowerCase().includes(searchInput.toString().toLocaleLowerCase().trim()))
+            })
         console.log(filteredByIncludes)
         return props.setSongs(filteredByIncludes)
       }
