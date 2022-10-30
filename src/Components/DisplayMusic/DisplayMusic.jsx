@@ -1,8 +1,17 @@
+// import React, { useState } from 'react';
+
+// import EditModal from "../EditModal/EditModal";
 
 
 const DisplayMusic = (props) => {
 
+    // const [isVisible, setIsVisble] = useState(true);  
     
+    // const toggleForm = () => {
+    //   setIsVisble(!isVisible);
+    // }
+
+    // {isVisible && <EditModal songs={props.songs}/>}
 
     return (
     <table>
@@ -23,6 +32,7 @@ const DisplayMusic = (props) => {
             <tr key={song.id}>
               <td><button onClick={() => props.likeSong(song.id)}>Likes {song.likes}</button></td>
               <td><button>Edit</button></td>
+              {/* <td><button onClick={() => toggleForm()}>Edit</button></td> */}
               <td>{song.title}</td>
               <td>{song.artist}</td>
               <td>{song.album}</td>
