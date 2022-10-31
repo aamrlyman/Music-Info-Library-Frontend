@@ -1,49 +1,49 @@
-// import React, { useState } from 'react';
-
-// import EditModal from "../EditModal/EditModal";
-
+import React, { useState, Fragment } from "react";
+import ReadOnlyRow from "../ReadOnlyRow/ReadOnlyRow";
+import EditableRow from "../EditableRow/EditableRow";
 
 const DisplayMusic = (props) => {
+  const [editSongId, setEditSongId] = useState(null);
 
-    // const [isVisible, setIsVisble] = useState(true);  
-    
-    // const toggleForm = () => {
-    //   setIsVisble(!isVisible);
-    // }
+  const handEditClick = (event, song) => {
+    event.preventDefault();
+    setEditSongId(song.id)
+  }
 
-    // {isVisible && <EditModal songs={props.songs}/>}
-
-    return (
-    <table>
-      <thead>
-        <tr>
-          <th>Likes</th>
-          <th>Edit</th>
-          <th>Title</th>
-          <th>Artist</th>
-          <th>Album</th>
-          <th>Release Date</th>
-          <th>Genre</th>
-        </tr>
-      </thead>
-      <tbody>
-        {props.songs.map((song, index) => {
-          return (
-            <tr key={song.id}>
-              <td><button onClick={() => props.likeSong(song.id)}>Likes {song.likes}</button></td>
-              <td><button>Edit</button></td>
-              {/* <td><button onClick={() => toggleForm()}>Edit</button></td> */}
-              <td>{song.title}</td>
-              <td>{song.artist}</td>
-              <td>{song.album}</td>
-              <td>{song.release_date}</td>
-              <td>{song.genre}</td>
-              <td><button onClick={() => props.deleteSong(song.id)}>Delete</button></td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
+  return (
+    <form>
+      <table>
+        <thead>
+          <tr>
+            <th>Likes</th>
+            <th>Title</th>
+            <th>Artist</th>
+            <th>Album</th>
+            <th>Release Date</th>
+            <th>Genre</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {props.songs.map((song, index) => {
+            return (
+        <Fragment key={song.id}>
+                {editSongId === song.id ? (
+                  <EditableRow />
+                ) : (
+                  <ReadOnlyRow
+                    song={song}
+                    likeSong={props.likeSong}
+                    deleteSong={props.deleteSong}
+                    handEditClick={handEditClick}
+                  />
+                )}
+        </Fragment>
+            );
+          })}
+        </tbody>
+      </table>
+    </form>
   );
 };
 

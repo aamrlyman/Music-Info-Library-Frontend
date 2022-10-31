@@ -103,9 +103,9 @@ const SearchBar = (props) => {
     return (
     <div>
       <form onSubmit={handleSumbit}>
-        <label>Search By</label>
+        <label>Search By:</label>
         <select name="Song Properties" value={dropDownFilter} onChange= {(event) => setDropDownFilter(event.target.value)}>
-          <option value="">Choose Criteria</option>
+          <option value="">Sort Criteria</option>
           <option value="title">Title</option>
           <option value="artist">Artist</option>
           <option value="album">Album</option>
