@@ -38,14 +38,20 @@ function App() {
       console.log(response);
   }
 
-    async function likeSong(songId){
+    async function likeSong(event, songId){
+      event.preventDefault();
       const response = await axios.put(`http://127.0.0.1:8000/music/${songId}/like/`);
       console.log(response);
-      getAllSongs()
+      getAllSongs();
     }
-    function Example(filteredSongs){
-      setSongs(filteredSongs)
+    
+    async function updateSong(songId, song){
+      const response = await axios.put(`http://127.0.0.1:8000/music/${songId}/`, song);
+      console.log(response);
+      getAllSongs();
     }
+
+
 
     // async function getSongById(songId){
     //   const response = await axios.get(`http://127.0.0.1:8000/music/${songId}/`);
@@ -57,10 +63,9 @@ function App() {
   return(
     <div>
         {/* <button onClick={() => getAllSongs()}>Get all Songs</button> */}
-        <NavBar songs={songs} getAllSongs={getAllSongs} setSongs={setSongs} likeSong={likeSong} deleteSong={deleteSong}/>
+        <NavBar songs={songs} getAllSongs={getAllSongs} setSongs={setSongs}/>
         <CreateSongForm addNewSong = {addNewSong}/>
-        {/* <SearchBar songs={songs} getAllSongs={getAllSongs} setSongs={setSongs} likeSong={likeSong} deleteSong={deleteSong}/> */}
-        <DisplayMusic songs={songs} getAllSongs={getAllSongs} setSongs={setSongs} likeSong={likeSong} deleteSong={deleteSong}/>
+        <DisplayMusic songs={songs} getAllSongs={getAllSongs} setSongs={setSongs} likeSong={likeSong} deleteSong={deleteSong} updateSong={updateSong}/>
     </div>
   );
 }

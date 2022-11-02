@@ -2,7 +2,7 @@
 const ReadOnlyRow = (props) => {
     return (
         <tr key={props.song.id}>
-        <td><button onClick={() => props.likeSong(props.song.id)}>Likes {props.song.likes}</button></td>
+        <td><button onClick={(event) => props.likeSong(event, props.song.id)}>Likes {props.song.likes}</button></td>
         {/* <td><button onClick={() => toggleForm()}>Edit</button></td> */}
         <td>{props.song.title} </td>
         <td>{props.song.artist} </td>

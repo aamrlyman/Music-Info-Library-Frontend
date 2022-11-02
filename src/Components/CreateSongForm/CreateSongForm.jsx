@@ -36,15 +36,15 @@ const CreateSongForm = (props) => {
         {/* https://getbootstrap.com/docs/4.0/components/forms/ */}
         <div className='form-group'>
             <label>Title</label>              
-            <input type = "text" className="form-control" value={title} required="required"  placeholder="Song Title" onChange= {(event) => setTitle(event.target.value)}></input>      
+            <input type = "text" className="form-control" value={title} required="required"  placeholder="Song Title..." onChange= {(event) => setTitle(event.target.value)}></input>      
         </div>
         <div className='form-group'>
             <label>Artist</label>
-            <input type = "text" className="form-control" value={artist} required="required"  placeholder="Artist" onChange= {(event) => setArtist(event.target.value)}></input>
+            <input type = "text" className="form-control" value={artist} required="required"  placeholder="Artist..." onChange= {(event) => setArtist(event.target.value)}></input>
         </div>
         <div className='form-group'>
             <label>Album</label>
-            <input type = "text" className="form-control" value={album} required="required" placeholder="Album" onChange= {(event) => setAlbum(event.target.value)}></input>
+            <input type = "text" className="form-control" value={album} required="required" placeholder="Album..." onChange= {(event) => setAlbum(event.target.value)}></input>
         </div>
         <div className='form-group'>
             <label>Release Date</label>
@@ -53,7 +53,7 @@ const CreateSongForm = (props) => {
         </div>
         <div className='form-group'>
             <label>Genre</label>
-            <input type = "text" className="form-control" value={genre} required="required" placeholder="Genre" onChange= {(event) => setGenre(event.target.value)}></input>
+            <input type = "text" className="form-control" value={genre} required="required" placeholder="Genre..." onChange= {(event) => setGenre(event.target.value)}></input>
         </div>
         <button type="submit" className="btn btn-primary">Create</button>
     </form>
