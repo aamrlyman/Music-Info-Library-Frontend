@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import DisplayMusic from "../DisplayMusic/DisplayMusic";
 
 const SearchBar = (props) => {
     
@@ -123,7 +122,6 @@ const SearchBar = (props) => {
         <button type="submit" value="Submit">Search</button>
         <button onClick={() => newSearch()}>New Search</button>
       </form>
-      <DisplayMusic songs={props.songs} likeSong={props.likeSong} deleteSong={props.deleteSong}/>
     </div>
   );
 };

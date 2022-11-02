@@ -3,6 +3,7 @@ import axios from 'axios';
 import NavBar from './Components/NavBar/NavBar';
 import CreateSongForm from './Components/CreateSongForm/CreateSongForm';
 import SearchBar from './Components/SearchBar/SearchBar';
+import DisplayMusic from './Components/DisplayMusic/DisplayMusic';
 
 function App() {
   
@@ -42,6 +43,9 @@ function App() {
       console.log(response);
       getAllSongs()
     }
+    function Example(filteredSongs){
+      setSongs(filteredSongs)
+    }
 
     // async function getSongById(songId){
     //   const response = await axios.get(`http://127.0.0.1:8000/music/${songId}/`);
@@ -53,9 +57,10 @@ function App() {
   return(
     <div>
         {/* <button onClick={() => getAllSongs()}>Get all Songs</button> */}
-        <NavBar/>
+        <NavBar songs={songs} getAllSongs={getAllSongs} setSongs={setSongs} likeSong={likeSong} deleteSong={deleteSong}/>
         <CreateSongForm addNewSong = {addNewSong}/>
-        <SearchBar songs={songs} getAllSongs={getAllSongs} setSongs={setSongs} likeSong={likeSong} deleteSong={deleteSong}/>
+        {/* <SearchBar songs={songs} getAllSongs={getAllSongs} setSongs={setSongs} likeSong={likeSong} deleteSong={deleteSong}/> */}
+        <DisplayMusic songs={songs} getAllSongs={getAllSongs} setSongs={setSongs} likeSong={likeSong} deleteSong={deleteSong}/>
     </div>
   );
 }

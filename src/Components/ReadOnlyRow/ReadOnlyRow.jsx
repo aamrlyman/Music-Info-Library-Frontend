@@ -9,7 +9,7 @@ const ReadOnlyRow = (props) => {
         <td>{props.song.album} </td>
         <td>{props.song.release_date} </td>
         <td>{props.song.genre} </td>
-        <td><button onClick={(event) => props.handledEditClick(event, props.song)}>Edit</button></td>
+        <td><button onClick={() => props.handEditClick( props.song)}>Edit</button></td>
         <td><button onClick={() => props.deleteSong(props.song.id)}>Delete</button></td>
       </tr>
       );

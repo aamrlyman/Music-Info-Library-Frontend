@@ -5,13 +5,12 @@ import EditableRow from "../EditableRow/EditableRow";
 const DisplayMusic = (props) => {
   const [editSongId, setEditSongId] = useState(null);
 
-  const handEditClick = (event, song) => {
-    event.preventDefault();
+  const handEditClick = (song) => {
     setEditSongId(song.id)
+    console.log(song)
   }
 
   return (
-    <form>
       <table>
         <thead>
           <tr>
@@ -29,7 +28,7 @@ const DisplayMusic = (props) => {
             return (
         <Fragment key={song.id}>
                 {editSongId === song.id ? (
-                  <EditableRow />
+                  <EditableRow song={song} />
                 ) : (
                   <ReadOnlyRow
                     song={song}
@@ -43,7 +42,6 @@ const DisplayMusic = (props) => {
           })}
         </tbody>
       </table>
-    </form>
   );
 };
 
