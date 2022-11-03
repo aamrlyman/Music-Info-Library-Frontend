@@ -4,6 +4,7 @@ import NavBar from './Components/NavBar/NavBar';
 import CreateSongForm from './Components/CreateSongForm/CreateSongForm';
 import SearchBar from './Components/SearchBar/SearchBar';
 import DisplayMusic from './Components/DisplayMusic/DisplayMusic';
+import "./App.css"
 
 function App() {
   
@@ -61,7 +62,7 @@ function App() {
 
 
   return(
-    <div>
+    <div className='BackgroundImage'>
         {/* <button onClick={() => getAllSongs()}>Get all Songs</button> */}
         <NavBar songs={songs} getAllSongs={getAllSongs} setSongs={setSongs}/>
         <CreateSongForm addNewSong = {addNewSong}/>

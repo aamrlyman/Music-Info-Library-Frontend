@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import "./SearchBar.css"
 
 const SearchBar = (props) => {
     
@@ -100,9 +101,9 @@ const SearchBar = (props) => {
 
 
     return (
-    <div>
+    <div className='searchBar'>
       <form onSubmit={handleSumbit}>
-        <label>Search By:</label>
+        <label className='searchFilter'>Search By</label>
         <select name="Song Properties" value={dropDownFilter} onChange= {(event) => setDropDownFilter(event.target.value)}>
           <option value="">Sort Criteria</option>
           <option value="title">Title</option>
@@ -119,8 +120,8 @@ const SearchBar = (props) => {
           <option value="<">less than</option>
         </select>
         <input type={searchType} value ={searchInput} placeholder="additional Search Criteria" onChange={(event) => setSearchInput(event.target.value)}></input>
-        <button type="submit" value="Submit">Search</button>
-        <button onClick={() => newSearch()}>New Search</button>
+        <button className="searchButtons" type="submit">Search</button>
+        <button className="searchButtons" onClick={() => newSearch()}>New Search</button>
       </form>
     </div>
   );
