@@ -6,6 +6,7 @@ import "./DisplayMusic.css"
 const DisplayMusic = (props) => {
   
   const [editSongId, setEditSongId] = useState(null);
+  const [modalShow, setModalShow] = React.useState(false);
   const [editSong, setEditSong] = useState({
     title: "",
     artist: "",
@@ -25,6 +26,7 @@ const DisplayMusic = (props) => {
 
   const handEditClick = (song) => {
     setEditSongId(song.id);
+    setModalShow(true)
     console.log(song);
     const songValues = {
       title: song.title,
@@ -82,6 +84,8 @@ const DisplayMusic = (props) => {
                   />
                 ) : (
                   <ReadOnlyRow
+                    modalShow={modalShow}
+                    setModalShow={setModalShow}
                     song={song}
                     likeSong={props.likeSong}
                     deleteSong={props.deleteSong}

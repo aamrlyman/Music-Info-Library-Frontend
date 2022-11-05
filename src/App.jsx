@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import NavBar from './Components/NavBar/NavBar';
 import CreateSongForm from './Components/CreateSongForm/CreateSongForm';
-import SearchBar from './Components/SearchBar/SearchBar';
 import DisplayMusic from './Components/DisplayMusic/DisplayMusic';
 import "./App.css"
+import EditModal from "./Components/EditModal"
 
 function App() {
   

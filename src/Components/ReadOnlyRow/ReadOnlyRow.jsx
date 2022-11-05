@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import EditModal from '../EditModal';
 
 const ReadOnlyRow = (props) => {
-  
   // const [song, setSong] = useState(props.song)
 
   async function likeSong(event, songId){
@@ -22,7 +22,14 @@ const ReadOnlyRow = (props) => {
         <td>{props.song.album} </td>
         <td>{props.song.release_date} </td>
         <td>{props.song.genre} </td>
-        <td><button className="btn btn-light" onClick={() => props.handEditClick( props.song)}>Edit</button></td>
+        <td><button className="btn btn-light" onClick={() => props.handEditClick(props.song)}>Edit</button></td>
+        {/* <button variant="primary" onClick={() => props.setModalShow(true)}>
+        Launch vertically centered modal
+      </button> */}
+      <EditModal
+        show={props.modalShow}
+        onHide={() => props.setModalShow(false)}
+      />
         <td><button className="btn btn-light" onClick={() => props.deleteSong(props.song.id)}>Delete</button></td>
       </tr>
       );
