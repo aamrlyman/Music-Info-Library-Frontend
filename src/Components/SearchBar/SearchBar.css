@@ -2,33 +2,65 @@
 .searchBar{
     /* border: solid rgb(252, 252, 252) 2px; */
     display: inline-block;
+
 }
 
 .searchFilter {
     color: #8BCECF;
     margin-right: 8px;
     font-size: 2rem;
+       
 
 }
 
 select {
+    height: 35px;
     font-size: 1.5rem;
-    color: #8BCECF;
+    /* color: #8BCECF; */
+    color: white;
     background-color:#2F2212;
     border-radius: 7px;
-}
-
-input{
-    height: 1.5rem;
-    border-radius: 7px;
+    border: solid white 1px;
     position: relative;
     bottom: 5px;
+    margin-right: 1px;
+
 }
 
-.searchButtons {
-    font-size: 1.25rem;
+select:hover{
+    background-color: white;
+    color: black;
+}
+
+input.SearchInput {
+    height: 35px;
+    border-radius: 4px;
+    position: relative;
+    bottom: 5px;
+    border: solid #8BCECF 1px;
+    opacity: .75;
+
+}
+
+input.SearchInput::placeholder {
+    font-weight: 300;
+    opacity: .9;
+    color: black;
+}
+
+button.btn.btn-primary {
+    /* background-color: #2F2212; */
+    color: white;
+    font-size: 1rem;
+    border: solid white 1px;
     border-radius: 7px;
     position: relative;
     bottom: 3px;
-    margin-left: 2px;
+    
+}
+
+button.btn.btn-outline-light{
+    margin-bottom: 15px;
+    margin-right: 2px;
+    margin-left: 1px;
 }

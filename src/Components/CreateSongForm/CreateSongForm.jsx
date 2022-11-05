@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import "./CreateSongForm.css"
 
 const CreateSongForm = (props) => {
     
@@ -33,6 +33,7 @@ const CreateSongForm = (props) => {
     
     return (
         <form onSubmit={handleSubmit} className='form-grid'>
+            <h2>Create Song</h2>
         {/* https://getbootstrap.com/docs/4.0/components/forms/ */}
         <div className='form-group'>
             <label>Title</label>              
@@ -55,7 +56,7 @@ const CreateSongForm = (props) => {
             <label>Genre</label>
             <input type = "text" className="form-control" value={genre} required="required" placeholder="Genre..." onChange= {(event) => setGenre(event.target.value)}></input>
         </div>
-        <button type="submit" className="btn btn-primary">Create</button>
+        <button type="submit" className="btn btn-outline-light">Create</button>
     </form>
       );
 }

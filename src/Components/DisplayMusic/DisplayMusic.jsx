@@ -1,6 +1,7 @@
 import React, { useState, Fragment } from "react";
 import ReadOnlyRow from "../ReadOnlyRow/ReadOnlyRow";
 import EditableRow from "../EditableRow/EditableRow";
+import "./DisplayMusic.css"
 
 const DisplayMusic = (props) => {
   
@@ -56,11 +57,10 @@ const DisplayMusic = (props) => {
   };
 
   return (
-    <form onSubmit={handleEditSongSubmit}>
+    <form className="displayMusic" onSubmit={handleEditSongSubmit}>
       <table>
         <thead>
           <tr>
-            <th>Likes</th>
             <th>Title</th>
             <th>Artist</th>
             <th>Album</th>
@@ -86,6 +86,7 @@ const DisplayMusic = (props) => {
                     likeSong={props.likeSong}
                     deleteSong={props.deleteSong}
                     handEditClick={handEditClick}
+                    getAllSongs={props.getAllSongs}
                   />
                 )}
               </Fragment>

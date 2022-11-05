@@ -103,7 +103,7 @@ const SearchBar = (props) => {
     return (
     <div className='searchBar'>
       <form onSubmit={handleSumbit}>
-        <label className='searchFilter'>Search By</label>
+        <label className='searchFilter'>Search By:</label>
         <select name="Song Properties" value={dropDownFilter} onChange= {(event) => setDropDownFilter(event.target.value)}>
           <option value="">Sort Criteria</option>
           <option value="title">Title</option>
@@ -119,9 +119,9 @@ const SearchBar = (props) => {
           <option value=">">greater than</option>
           <option value="<">less than</option>
         </select>
-        <input type={searchType} value ={searchInput} placeholder="additional Search Criteria" onChange={(event) => setSearchInput(event.target.value)}></input>
-        <button className="searchButtons" type="submit">Search</button>
-        <button className="searchButtons" onClick={() => newSearch()}>New Search</button>
+        <input className='SearchInput' type={searchType} value ={searchInput} placeholder=" More Search Criteria..." onChange={(event) => setSearchInput(event.target.value)}></input>
+        <button className="btn btn-outline-light" type="submit">Search</button>
+        <button className="btn btn-outline-light" onClick={() => newSearch()}>New Search</button>
       </form>
     </div>
   );

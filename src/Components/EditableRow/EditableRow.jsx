@@ -1,13 +1,14 @@
 import React, { useState } from "react";
+import "./EditableRow.css";
 
 const EditableRow = (props) => {
   //   const []
 
   return (
     <tr>
-      <td>                 </td>
       <td>
         <input
+          className="editRow"
           type="text"
           required="required"
           placeholder="Enter a title..."
@@ -19,6 +20,7 @@ const EditableRow = (props) => {
       </td>
       <td>
         <input
+          className="editRow"
           type="text"
           required="required"
           placeholder="Enter an artist.. "
@@ -29,6 +31,7 @@ const EditableRow = (props) => {
       </td>
       <td>
         <input
+          className="editRow"
           type="text"
           required="required"
           placeholder="Enter an album..."
@@ -39,6 +42,7 @@ const EditableRow = (props) => {
       </td>
       <td>
         <input
+          className="editRow"
           type="date"
           required="required"
           name="release_date"
@@ -48,6 +52,7 @@ const EditableRow = (props) => {
       </td>
       <td>
         <input
+          className="editRow"
           type="text"
           required="required"
           placeholder="Enter a genre..."
@@ -58,7 +63,11 @@ const EditableRow = (props) => {
       </td>
       <td>
         <button type="submit">Save</button>
-        <button typed="button" onClick={props.handleCancelClick}>Cancel</button>
+      </td>
+      <td>
+      <button typed="button" onClick={props.handleCancelClick}>
+          Cancel
+        </button>
       </td>
     </tr>
   );
