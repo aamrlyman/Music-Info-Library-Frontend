@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import "./ReadOnlyRow.css"
 
 const ReadOnlyRow = (props) => {
   
@@ -14,16 +15,24 @@ const ReadOnlyRow = (props) => {
   }
 
     return (
-        <tr key={props.song.id}>
-        <td><button className="btn btn-outline-light" onClick={(event) => likeSong(event, props.song.id)}><i class="fa-solid fa-thumbs-up" ></i> {props.song.likes}</button></td>
+        <tr className='dataRows' key={props.song.id}>
+        <td className="likes">
+          <button 
+            className="btn btn-outline-light"  
+            onClick={(event) => likeSong(event, props.song.id)}>
+              <i class="fa-solid fa-thumbs-up" >
+                </i><span> {props.song.likes}</span>
+                 </button>
+          </td>
         {/* <td><button onClick={() => toggleForm()}>Edit</button></td> */}
         <td>{props.song.title} </td>
         <td>{props.song.artist} </td>
         <td>{props.song.album} </td>
         <td>{props.song.release_date} </td>
         <td>{props.song.genre} </td>
-        <td><button className="btn btn-light" onClick={() => props.handEditClick( props.song)}>Edit</button></td>
-        <td><button className="btn btn-light" onClick={() => props.deleteSong(props.song.id)}>Delete</button></td>
+        <td><button className="btn btn-outline-light" onClick={() => props.handEditClick( props.song)}>Edit</button>
+        <button className="btn btn-outline-light" onClick={() => props.deleteSong(props.song.id)}>Delete</button></td>
+        {/* <td></td> */}
       </tr>
       );
 }

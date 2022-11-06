@@ -34,6 +34,7 @@ function App() {
     }
 
     async function deleteSong(songId){
+      alert("Are you sure want to delete this song. This action cannot be undone.")
       const response = await axios.delete(`http://127.0.0.1:8000/music/${songId}/`);
       getAllSongs();
       console.log(response);

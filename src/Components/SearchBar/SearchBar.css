@@ -2,6 +2,8 @@
 .searchBar{
     /* border: solid rgb(252, 252, 252) 2px; */
     display: inline-block;
+    position: relative;
+    left: 34vh;
 
 }
 
@@ -9,7 +11,7 @@
     color: #8BCECF;
     margin-right: 8px;
     font-size: 2rem;
-       
+    width: 145px;
 
 }
 
@@ -27,9 +29,10 @@ select {
 
 }
 
-select:hover{
+select:hover, .createButton:hover{
     background-color: white;
     color: black;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
 input.SearchInput {
@@ -38,25 +41,16 @@ input.SearchInput {
     position: relative;
     bottom: 5px;
     border: solid #8BCECF 1px;
-    opacity: .75;
-
+    margin-left: 5px;
+    /* opacity: .75; */
 }
 
-input.SearchInput::placeholder {
-    font-weight: 300;
-    opacity: .9;
-    color: black;
-}
 
-button.btn.btn-primary {
-    /* background-color: #2F2212; */
-    color: white;
-    font-size: 1rem;
-    border: solid white 1px;
-    border-radius: 7px;
-    position: relative;
-    bottom: 3px;
-    
+
+form > button.btn.btn-outline-light {
+    font-size: 1.4rem;
+    margin-left: 5px;
+
 }
 
 button.btn.btn-outline-light{

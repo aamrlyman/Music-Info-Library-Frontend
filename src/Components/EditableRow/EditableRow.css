@@ -1,5 +1,10 @@
 
 .editRow {
     width: 95%;
-    margin-right: 8em;
+    margin: 0;
+
+}
+
+td.buttonRow{
+    width: 120px;
 }

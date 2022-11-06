@@ -58,15 +58,16 @@ const DisplayMusic = (props) => {
 
   return (
     <form className="displayMusic" onSubmit={handleEditSongSubmit}>
-      <table>
+      <table className="table">
         <thead>
           <tr>
-            <th>Title</th>
-            <th>Artist</th>
-            <th>Album</th>
-            <th>Release Date</th>
-            <th>Genre</th>
-            <th>Actions</th>
+            <th className="likeshead"></th>
+            <th  scope="col">Title</th>
+            <th scope="col">Artist</th>
+            <th scope="col">Album</th>
+            <th scope="col">Release Date</th>
+            <th className="genreRow" scope="col">Genre</th>
+            <th scope="col">Actions</th>
           </tr>
         </thead>
         <tbody>

@@ -1,6 +1,7 @@
 body{
 margin: 0;
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+color: #e7d1d1;
 
 }
 
@@ -12,5 +13,6 @@ background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
 position: relative; 
+left:1px;
 /* opacity: .6;    */
 }

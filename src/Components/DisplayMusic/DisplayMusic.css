@@ -4,11 +4,32 @@
     position: relative;
     right: 0;
     border-radius: 7px;
-    width: 50%;
-    left: 48%;
-    top: -14%;
+    width: 60%;
+    left: 38%;
+    top: 3%;
     background-color: #583C27;
+    height: 70%;
     opacity: .9;
-    color: #e7d1d1
+    color: #e7d1d1;
+    overflow-y: scroll
 }
 
+thead {
+    background-color: #2F2212;
+    position: sticky;
+    top: 0; /* Don't forget this, required for the stickiness */
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4)
+}
+
+th{
+    color: #8BCECF;
+    font-size: 22px;
+    text-align: center;
+    font-weight: 600;
+    vertical-align: middle;
+  }
+  
+  tr.dataRows:hover{
+    /* color:black; */
+    background-color:  #2F2212;  
+}

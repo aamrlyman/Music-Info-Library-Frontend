@@ -6,6 +6,7 @@ const EditableRow = (props) => {
 
   return (
     <tr>
+      <td></td>
       <td>
         <input
           className="editRow"
@@ -42,7 +43,7 @@ const EditableRow = (props) => {
       </td>
       <td>
         <input
-          className="editRow"
+          className="Row"
           type="date"
           required="required"
           name="release_date"
@@ -61,14 +62,13 @@ const EditableRow = (props) => {
           onChange={props.handleEditSong}
         ></input>
       </td>
-      <td>
-        <button type="submit">Save</button>
-      </td>
-      <td>
-      <button typed="button" onClick={props.handleCancelClick}>
+      <td className="buttonRow">
+      <button className="btn btn-outline-light" type="submit">Save</button>
+      <button className="btn btn-outline-light" type="button" onClick={props.handleCancelClick}>
           Cancel
         </button>
       </td>
+
     </tr>
   );
 };
