@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import "./CreateSongForm.css"
+import axios from "axios";
+import { createRenderer } from 'react-dom/test-utils';
 
 const CreateSongForm = (props) => {
     
@@ -9,6 +11,17 @@ const CreateSongForm = (props) => {
     const [releaseDate, setReleaseDate] = useState('');
     const [genre, setGenre] = useState('');
 
+    async function addNewSong (song){
+        const response = await axios.post("http://127.0.0.1:8000/music/", song)
+        // ... is like object.assign. Take all the current values of entries and add whatever entry has in it
+        //the only way to update a state variable in React is to use the setEntries function. Use a temporariy array and the ... to assign more values to the array
+        console.log(response)
+        // let tempSongs = [song,...songs]
+        // setSongs(tempSongs);
+        props.getAllSongs();
+        alert(`Song: ${song.title} created.` )
+      }
+  
 
     function handleSubmit (event){
         event.preventDefault();
@@ -23,7 +36,7 @@ const CreateSongForm = (props) => {
             "likes": 0
         }
        console.log(newSong);
-        props.addNewSong(newSong);
+        addNewSong(newSong);
         setTitle('')
         setArtist('')
         setAlbum('')

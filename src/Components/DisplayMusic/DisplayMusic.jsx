@@ -2,6 +2,7 @@ import React, { useState, Fragment } from "react";
 import ReadOnlyRow from "../ReadOnlyRow/ReadOnlyRow";
 import EditableRow from "../EditableRow/EditableRow";
 import "./DisplayMusic.css"
+import axios from 'axios';
 
 const DisplayMusic = (props) => {
   
@@ -56,6 +57,20 @@ const DisplayMusic = (props) => {
     setEditSongId(null);
   };
 
+  function confirmDelete(songId){
+    let text = "Are you sure want to delete this song. This action cannot be undone."
+    if (window.confirm(text) === true){
+        deleteSong(songId);
+    }
+    else{ }
+  }
+
+  async function deleteSong(songId){
+    const response = await axios.delete(`http://127.0.0.1:8000/music/${songId}/`);
+    props.getAllSongs();
+    console.log(response);
+}
+
   return (
     <form className="displayMusic" onSubmit={handleEditSongSubmit}>
       <table className="table">
@@ -84,9 +99,8 @@ const DisplayMusic = (props) => {
                 ) : (
                   <ReadOnlyRow
                     song={song}
-                    likeSong={props.likeSong}
-                    deleteSong={props.deleteSong}
                     handEditClick={handEditClick}
+                    confirmDelete={confirmDelete}
                     getAllSongs={props.getAllSongs}
                   />
                 )}
