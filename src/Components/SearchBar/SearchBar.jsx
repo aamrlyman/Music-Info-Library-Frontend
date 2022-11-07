@@ -21,6 +21,7 @@ const SearchBar = (props) => {
         setSearchInput('');
         setLikesBool(true);
         setLikesDropDown("Most Likes");
+        // props.getAllSongs();
       }
 
       function newSearch(){
