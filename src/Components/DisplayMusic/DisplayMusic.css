@@ -28,6 +28,7 @@ th{
     text-align: center;
     font-weight: 600;
     vertical-align: middle;
+    height: 60px;
   }
   
   tr.dataRows:hover{
