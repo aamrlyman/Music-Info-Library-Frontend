@@ -19,7 +19,7 @@ const ReadOnlyRow = (props) => {
     return (
         <tr className='dataRows' key={props.song.id}>
         <td className="likes">
-          <button 
+          <button title={`${props.song.likes} likes`}
             className="btn btn-outline-light"  
             onClick={(event) => likeSong(event, props.song.id)}>
               <i className="fa-solid fa-thumbs-up" >
@@ -33,7 +33,7 @@ const ReadOnlyRow = (props) => {
         <td>{props.song.release_date} </td>
         <td>{props.song.genre} </td>
         <td><button className="btn btn-outline-light" onClick={() => props.handEditClick( props.song)}>Edit</button>
-        <button className="btn btn-outline-light" onClick={() =>props.confirmDelete(props.song.id)}>Delete</button></td>
+        <button type='button' className="btn btn-outline-light" onClick={() =>props.confirmDelete(props.song.id)}>Delete</button></td>
         {/* <td></td> */}
       </tr>
       );
