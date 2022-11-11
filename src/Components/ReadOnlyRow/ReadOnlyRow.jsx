@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from "axios";
+import axios from "axios"
 import "./ReadOnlyRow.css"
 
 const ReadOnlyRow = (props) => {
@@ -20,13 +20,10 @@ const ReadOnlyRow = (props) => {
         <tr className='dataRows' key={props.song.id}>
         <td className="likes">
           <button 
-            className="btn btn-outline-light"
-            data-toggle="tooltip" 
-            data-placement="left" 
-            title={props.song.likes}  
+            className="btn btn-outline-light"  
             onClick={(event) => likeSong(event, props.song.id)}>
               <i className="fa-solid fa-thumbs-up" >
-                </i>
+                </i><span> {props.song.likes}</span>
                  </button>
           </td>
         {/* <td><button onClick={() => toggleForm()}>Edit</button></td> */}
@@ -35,7 +32,7 @@ const ReadOnlyRow = (props) => {
         <td>{props.song.album} </td>
         <td>{props.song.release_date} </td>
         <td>{props.song.genre} </td>
-        <td><button className="btn btn-outline-light" onClick={() => props.handEditClick(props.song)}>Edit</button>
+        <td><button className="btn btn-outline-light" onClick={() => props.handEditClick( props.song)}>Edit</button>
         <button className="btn btn-outline-light" onClick={() =>props.confirmDelete(props.song.id)}>Delete</button></td>
         {/* <td></td> */}
       </tr>
